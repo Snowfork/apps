@@ -13,7 +13,6 @@ type MyWindow = (typeof window) & {
   web3: Web3;
 }
 
-// TODO: checkout 80782242512401bbfd4e5ee671f6410f4d1beefe
 function TemplateApp ({ className }: Props): React.ReactElement<Props> {
 
   const ethEnabled = () => {
