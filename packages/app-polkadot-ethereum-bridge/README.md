@@ -30,6 +30,8 @@ Note: the Bank's deployed smart contract address is currently hardcoded to `0xC4
 yarn run start
 ```
 
+Once started the application is available at `http://127.0.0.1:3000/#/app-polkadot-ethereum-bridge`
+
 ### Connect chains
 
 Once substrate-ui has started, point the browser to substrate's local http endpoint using the user interface. 
