@@ -27,6 +27,21 @@ Note: the Bank's deployed smart contract address is currently hardcoded to `0xC4
 
 ```bash
 # In Snowfork/substrate-ui
+nvm install 10.18
+nvm use 10.18
+
+rm ./yarn.lock 
+
+yarn
+```
+
+```bash
+# In Snowfork/substrate-ui/packages/app-polkadot-ethereum-bridge
+yarn
+```
+
+```bash
+# In Snowfork/substrate-ui
 yarn run start
 ```
 
