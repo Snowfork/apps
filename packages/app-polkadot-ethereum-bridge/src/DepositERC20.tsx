@@ -52,7 +52,7 @@ function DepositERC20({ web3, bankContract, tokenContract, defaultAccount }: Pro
       setAllowance(Number(allowance));
     };
 
-    if(tokenContract && defaultAccount.length > 0) {
+    if(tokenContract && defaultAccount && defaultAccount.length > 0) {
       execute()
     } 
   }, [tokenContract, defaultAccount]);
