@@ -102,7 +102,7 @@ function DepositETH({ web3, bankContract, defaultAccount }: Props): React.ReactE
             id="eth-input-amount"
             variant="outlined"
             style={{ margin: 5 }}
-            placeholder="0 ERC20"
+            placeholder="0.00 ETH"
             margin="normal"
             onChange={e => setDepositAmount(e.target.value)}
             InputProps={{
