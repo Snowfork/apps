@@ -1,6 +1,6 @@
 # @app-polkadot-ethereum-bridge
 
-A simple application that supports the deposit of Ethereum and ERC20 tokens to a Bank contract.
+A simple application that supports the deposit of Ethereum and ERC20 tokens to a Bank contract via Metamask.
 
 ## Setup
 
