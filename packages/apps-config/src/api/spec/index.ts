@@ -2,6 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import artemisNode from './artemis-node';
 import centrifugeChain from './centrifuge-chain';
 import edgeware from './edgeware';
 import encointerNodeNotee from './encointer-node-notee';
@@ -11,6 +12,7 @@ import nodeTemplate from './node-template';
 import stablePoc from './stable-poc';
 
 export default {
+  'artemis-node': artemisNode,
   'centrifuge-chain': centrifugeChain,
   edgeware,
   'encointer-node': encointerNodeNotee,
