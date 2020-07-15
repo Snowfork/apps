@@ -5,19 +5,25 @@ A simple application that supports the deposit of Ethereum and ERC20 tokens to a
 ## Setup
 
 ### Start the local substrate chain
+
+Set up instructions for local substrate chain are [here](https://github.com/Snowfork/polkadot-ethereum/tree/main/parachain).
+
 ```bash
-# In Snowfork/polkadot-ethereum-bridge/parachain
+# After setup, start chain
 ./target/release/artemis-node --dev
 ```
 
 ### Start a local Ethereum chain
+
+Set up instructions for local ethereum chain are [here](https://github.com/Snowfork/polkadot-ethereum/tree/main/ethereum).
 ```bash
-# In Snowfork/polkadot-ethereum-bridge/ethereum
+# After setup, start chain
 truffle develop
 
-# From another terminal window in the same directory
+# Compile contracts
 truffle compile
 
+# Migrate contracts to local network
 truffle migrate
 ```
 
@@ -25,21 +31,20 @@ Note: the Bank's deployed smart contract address is currently hardcoded to `0xC4
 
 ### Start substrate-ui
 
+First, install project dependencies.
 ```bash
-# In Snowfork/substrate-ui
+# Must use node version >= 10.18
 nvm install 10.18
 nvm use 10.18
 
+# Remove yarn lock before install deps
 rm ./yarn.lock 
 
+# Install deps
 yarn
 ```
 
-```bash
-# In Snowfork/substrate-ui/packages/app-polkadot-ethereum-bridge
-npm install
-```
-
+Now we can start the application.
 ```bash
 # In Snowfork/substrate-ui
 yarn run start
