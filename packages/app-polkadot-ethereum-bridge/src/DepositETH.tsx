@@ -44,7 +44,7 @@ function DepositETH({ web3, bankContract, defaultAccount }: Props): React.ReactE
 
   // Handlers
   const handleSendETH = () => {
-    const execute = async (web3: Web3, rawTargetAppId: string, rawRecipient: string, amount: string) => {
+    const execute = async (rawTargetAppId: string, rawRecipient: string, amount: string) => {
       const recipientBytes = web3.utils.utf8ToHex(rawRecipient);
       const targetAppIDBytes = web3.utils.utf8ToHex(rawTargetAppId);
       // Send Ethereum to bank contract
@@ -55,7 +55,7 @@ function DepositETH({ web3, bankContract, defaultAccount }: Props): React.ReactE
       });
     };
 
-    execute(web3, targetAppID, polkadotRecipient, depositAmount);
+    execute(targetAppID, polkadotRecipient, depositAmount);
   };
 
   // Render

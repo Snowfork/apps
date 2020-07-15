@@ -69,7 +69,7 @@ function DepositERC20({ web3, bankContract, tokenContract, defaultAccount }: Pro
   };
 
   const handleSendERC20 = () => {
-    const execute = async (web3: Web3, rawTargetAppID: string, rawRecipient: string, amount: string) => {
+    const execute = async (rawTargetAppID: string, rawRecipient: string, amount: string) => {
       const recipientBytes = web3.utils.utf8ToHex(rawRecipient);
       const targetAppIDBytes = web3.utils.utf8ToHex(rawTargetAppID);
       // Send ERC20 token to bank contract
@@ -80,7 +80,7 @@ function DepositERC20({ web3, bankContract, tokenContract, defaultAccount }: Pro
       });
     };
     
-    execute(web3, targetAppID, polkadotRecipient, depositAmount);
+    execute(targetAppID, polkadotRecipient, depositAmount);
   };
 
   // Render

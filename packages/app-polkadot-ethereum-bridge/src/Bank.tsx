@@ -36,30 +36,30 @@ function Bank({ web3 }: Props): React.ReactElement<Props> {
 
   // Effects
   useEffect(() => {
-    const fetchAccounts = async (web3: Web3) => {
+    const fetchAccounts = async () => {
       const accs = await web3.eth.getAccounts();
       let defaultAcc = accs[0];
       web3.eth.defaultAccount = defaultAcc
       setDefaultAccount(defaultAcc);
     };
 
-    fetchAccounts(web3);
+    fetchAccounts();
   }, []);
 
   // Fetch contracts
   useEffect(() => {
-    const fetchBankContract = async (web3: Web3) => {
+    const fetchBankContract = async () => {
       const bankContractInstance = new web3.eth.Contract(BankContract.abi, BankContractAddress);
       setBankContract(bankContractInstance);
     };
 
-    const fetchTokenContract = async (web3: Web3) => {
+    const fetchTokenContract = async () => {
       const tokenContractInstance = new web3.eth.Contract(TestToken.abi, TestTokenContractAddress);
       setTokenContract(tokenContractInstance);
     };
  
-    fetchBankContract(web3);
-    fetchTokenContract(web3);
+    fetchBankContract();
+    fetchTokenContract();
   }, [web3]);
   
   // Render
