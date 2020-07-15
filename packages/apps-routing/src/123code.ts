@@ -4,7 +4,7 @@
 
 import { Route } from './types';
 
-import Component from '@polkadot/app-123code';
+import Component from '@polkadot/app-polkadot-ethereum-bridge';
 
 export default function create (t: <T = string> (key: string, text: string, options: { ns: string }) => T): Route {
   return {
@@ -17,7 +17,7 @@ export default function create (t: <T = string> (key: string, text: string, opti
       ]
     },
     icon: 'th',
-    name: '123code',
-    text: t<string>('nav.123-code', 'Template', { ns: 'apps-routing' })
+    name: 'app-polkadot-ethereum-bridge',
+    text: t<string>('app-polkadot-ethereum-bridge', 'Template', { ns: 'apps-routing' })
   };
 }

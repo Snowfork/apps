@@ -1,0 +1,20 @@
+{
+  "name": "@polkadot/app-polkadot-ethereum-bridge",
+  "private": true,
+  "version": "0.50.0-beta.6",
+  "description": "A basic app that interacts with Ethereum based smart contracts via metamask",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Snowfork",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@babel/runtime": "^7.10.4",
+    "@material-ui/core": "^4.11.0",
+    "@polkadot/react-components": "0.50.0-beta.6",
+    "bignumber.js": "^9.0.0",
+    "web3": "^1.2.9"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.7"
+  }
+}
