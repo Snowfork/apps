@@ -37,7 +37,7 @@ yarn
 
 ```bash
 # In Snowfork/substrate-ui/packages/app-polkadot-ethereum-bridge
-yarn
+npm install
 ```
 
 ```bash
