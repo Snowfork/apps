@@ -8,7 +8,7 @@
 export default {
   Address: 'AccountId',
   LookupSource: 'AccountId',
-  AppID: 'Vec<u8>',
+  AppID: '[u8; 32]',
   Message: 'Vec<u8>',
   PolkaETH: 'u128'
 };
