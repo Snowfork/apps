@@ -10,6 +10,6 @@ export default {
   LookupSource: 'AccountId',
   AppID: '[u8; 32]',
   Message: 'Vec<u8>',
-  PolkaETH: 'u128',
-  BalanceERC20: 'u128'
+  TokenId: 'H160',
+  AssetId: 'H160'
 };
