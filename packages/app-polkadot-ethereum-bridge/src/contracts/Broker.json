@@ -1,0 +1,128 @@
+{
+  "contractName": "Broker",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Broker.sol\":\"Broker\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Broker.sol\":{\"keccak256\":\"0xf6472ff6335c4f349f1c771f1b4326509a9bfaa68898fe52bb48d225f2c96423\",\"urls\":[\"bzz-raw://a3cb20a6735ebbbe488dd84553d8eacbd131179896c18bacb64c828a9a365440\",\"dweb:/ipfs/QmXSVVzQppWDhEDu5yyQ1GeuV85YQR1hc3shMSZoS5h6gh\"]},\"/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Verifier.sol\":{\"keccak256\":\"0x9b6cfa30ab952b8598f698ff817f3bf41e99cfd8ae5456f0ee30d51a03f9c1c0\",\"urls\":[\"bzz-raw://4f92b8320cc3ba1fac7b964bb1724b29cd6e443af0d0916db6de0883b2eb258f\",\"dweb:/ipfs/QmTncMrCDbw4L9PYAx2c2k5LZvYFd7Rjp5tBfCy3yhRcZ6\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220da7573d3c87e5fc58767a9c7b266513cf58944ab8206be16a523f5e6197cae3064736f6c63430006020033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220da7573d3c87e5fc58767a9c7b266513cf58944ab8206be16a523f5e6197cae3064736f6c63430006020033",
+  "sourceMap": "84:1525:1:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;84:1525:1;;;;;;;",
+  "deployedSourceMap": "84:1525:1:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.6.2;\n\nimport \"./Verifier.sol\";\n\ncontract Broker {\n\n    // mapping(address => bool) public applications;\n    // Verifier public verifier;\n\n    // constructor(address verifierAddr) {\n    //     verifier = new Verifier(verifierAddr);\n    // }\n\n    // function registerApp(address _appID)\n    //     public\n    // {\n    //     require(!applications[_appID], \"Application is already registered\");\n\n    //     // 0x0 is the value returned for not-yet created accounts.\n    //     // 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470 is returned for accounts without code.\n    //     bytes32 accountHash = 0xc5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470;\n    //     bytes32 codehash;\n    //     assembly { codehash := extcodehash(_appID) }\n    //     require(codehash != 0x0 && codehash != accountHash, \"Application must be a contract deployed to this network\");\n\n    //     applications[_appID] = true;\n    // }\n\n    // function route(bytes memory data, bytes memory verificationData)\n    //     public\n    // {\n    //     // TODO: Parse (hashedMessage, signature) from verificationData\n    //     bytes32 message = \"this is a data message\";\n    //     bytes memory sig = \"123456789signature987654321\";\n    //     require(verifier.verify(message, sig), \"Invalid operator signature\");\n\n    //     // TODO: Parse (app ID, contents) from data\n    //     // address appID = address(\"CfFEAAf7681c89285D65CfbE808b80e502696573\");\n    //     // 3. message contains (appID, contents)\n    //     // 4. send contents to appID!\n    // }\n\n}\n",
+  "sourcePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Broker.sol",
+  "ast": {
+    "absolutePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Broker.sol",
+    "exportedSymbols": {
+      "Broker": [
+        281
+      ]
+    },
+    "id": 282,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 279,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:1"
+      },
+      {
+        "absolutePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Verifier.sol",
+        "file": "./Verifier.sol",
+        "id": 280,
+        "nodeType": "ImportDirective",
+        "scope": 282,
+        "sourceUnit": 1504,
+        "src": "58:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 281,
+        "linearizedBaseContracts": [
+          281
+        ],
+        "name": "Broker",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 282,
+        "src": "84:1525:1"
+      }
+    ],
+    "src": "32:1578:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Broker.sol",
+    "exportedSymbols": {
+      "Broker": [
+        281
+      ]
+    },
+    "id": 282,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 279,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:1"
+      },
+      {
+        "absolutePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/Verifier.sol",
+        "file": "./Verifier.sol",
+        "id": 280,
+        "nodeType": "ImportDirective",
+        "scope": 282,
+        "sourceUnit": 1504,
+        "src": "58:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 281,
+        "linearizedBaseContracts": [
+          281
+        ],
+        "name": "Broker",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 282,
+        "src": "84:1525:1"
+      }
+    ],
+    "src": "32:1578:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-08-27T14:35:52.284Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

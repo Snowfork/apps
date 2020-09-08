@@ -1,0 +1,106 @@
+{
+  "contractName": "SimpleABI",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/SimpleABI.sol\":\"SimpleABI\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/SimpleABI.sol\":{\"keccak256\":\"0xb0064f1faed9ab29e1c93e4c1aef9934ea9643ef618d20b5cb8901380c535f52\",\"urls\":[\"bzz-raw://0253c1974c9d35c37e3ecc391ff58432b8ef9e77025f9c297bf37158870d80d2\",\"dweb:/ipfs/QmVmkneQvVxt2GvR6sbbYxE1qYPwdY9hrtdVjLhUMmsNvK\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212205ff4b8ea2c5b87dcab611283b9dad8cd3ac82b7739f2f223ecfe229b0d4a4fe664736f6c63430006020033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212205ff4b8ea2c5b87dcab611283b9dad8cd3ac82b7739f2f223ecfe229b0d4a4fe664736f6c63430006020033",
+  "sourceMap": "58:22:3:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;58:22:3;;;;;;;",
+  "deployedSourceMap": "58:22:3:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.6.2;\n\ncontract SimpleABI {\n}\n",
+  "sourcePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/SimpleABI.sol",
+  "ast": {
+    "absolutePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/SimpleABI.sol",
+    "exportedSymbols": {
+      "SimpleABI": [
+        655
+      ]
+    },
+    "id": 656,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 654,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 655,
+        "linearizedBaseContracts": [
+          655
+        ],
+        "name": "SimpleABI",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 656,
+        "src": "58:22:3"
+      }
+    ],
+    "src": "32:49:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/denali/go/src/github.com/snowfork/polkadot-ethereum/ethereum/contracts/SimpleABI.sol",
+    "exportedSymbols": {
+      "SimpleABI": [
+        655
+      ]
+    },
+    "id": 656,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 654,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:3"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 655,
+        "linearizedBaseContracts": [
+          655
+        ],
+        "name": "SimpleABI",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 656,
+        "src": "58:22:3"
+      }
+    ],
+    "src": "32:49:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-08-15T10:58:22.419Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
