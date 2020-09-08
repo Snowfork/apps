@@ -110,11 +110,11 @@ function AppERC20({ web3, contract, tokenContract, defaultAccount }: Props): Rea
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 
-  // // On load
-  // if(!fetchBalance) {
-  //   getBalance();
-  //   setFetchBalance(true);
-  // }
+  // On load
+  if(!fetchBalance) {
+    getBalance();
+    setFetchBalance(true);
+  }
 
   // Render
   return (
