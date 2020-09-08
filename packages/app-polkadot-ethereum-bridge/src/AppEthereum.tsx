@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // ------------------------------------------
 type Props = {
   web3: Web3,
-  bankContract: any,
+  contract: any,
   defaultAccount: string
 }
 
@@ -32,53 +32,66 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // ------------------------------------------
-//               DepositETH component
+//               AppEthereum component
 // ------------------------------------------
-function DepositETH({ web3, bankContract, defaultAccount }: Props): React.ReactElement<Props> {
+function AppEthereum({ web3, contract, defaultAccount }: Props): React.ReactElement<Props> {
   const classes = useStyles();
 
   // State
-  const [targetAppID, setTargetAppID] = useState(String);
+  const [balance, setBalance] = useState(String);
+  const [fetchBalance, setFetchBalance] = useState(Boolean);
+
   const [polkadotRecipient, setPolkadotRecipient] = useState(String);
   const [depositAmount, setDepositAmount] = useState(String);
 
   // Handlers
   const handleSendETH = () => {
-    const execute = async (rawTargetAppId: string, rawRecipient: string, amount: string) => {
-      const recipientBytes = web3.utils.utf8ToHex(rawRecipient);
-      const targetAppIDBytes = web3.utils.utf8ToHex(rawTargetAppId);
+    const execute = async (rawRecipient: string, amount: string) => {
+      const recipientBytes = Buffer.from(rawRecipient, "hex");
+
       // Send Ethereum to bank contract
-      return await bankContract.methods.sendETH(targetAppIDBytes, recipientBytes).send({
+      await contract.methods.sendETH(recipientBytes).send({
         from: defaultAccount,
         gas: 500000,
         value: web3.utils.toWei(amount, "ether")
       });
+
+      await sleep(5000);
+      getBalance();
     };
 
-    execute(targetAppID, polkadotRecipient, depositAmount);
+    execute(polkadotRecipient, depositAmount);
   };
+
+  const getBalance = () => {
+    const execute = async () => {
+      const currBalance = await web3.eth.getBalance(defaultAccount.toString());
+      setBalance(web3.utils.fromWei(currBalance, "ether"));
+    };
+
+    execute();
+  };
+
+  // Sleep is a wait function
+  function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  // On load
+  if(!fetchBalance) {
+    getBalance();
+    setFetchBalance(true);
+  }
+
+  getBalance();
 
   // Render
   return (
     <Box>
       <Box display="flex" flexDirection="column" className={classes.paper}>
         <Typography variant="h5" gutterBottom>
-            Deposit ETH
+            Ethereum App
         </Typography>
-        <Typography gutterBottom>
-            Which application on Polkadot would you like this data delivered to?
-        </Typography>
-        <TextField
-            id="eth-input-target"
-            variant="outlined"
-            style={{ margin: 5 }}
-            placeholder={"my-application-id"}
-            margin="normal"
-            onChange={e => setTargetAppID(e.target.value)}
-            InputProps={{
-                value: targetAppID
-            }}
-        />
       <Box padding={1}/>
         <Typography gutterBottom>
             What account would you like to fund on Polkadot?
@@ -109,6 +122,12 @@ function DepositETH({ web3, bankContract, defaultAccount }: Props): React.ReactE
                 value: depositAmount
             }}
         />
+        <Box display="flex" justifyContent="space-around" alignItems="center">
+        <Box>
+          <Typography>
+            Current balance: {balance} ETH
+          </Typography>
+         </Box>
          <Box display="flex" alignItems="center" height="100px" width="300px" paddingTop={2} paddingBottom={1}>
             <Button
                 color="primary"
@@ -119,13 +138,14 @@ function DepositETH({ web3, bankContract, defaultAccount }: Props): React.ReactE
                       Send ETH
                   </Typography>
             </Button>
+         </Box>
         </Box>
       </Box>
     </Box>
   );
 }
 
-export default React.memo(styled(DepositETH)`
+export default React.memo(styled(AppEthereum)`
   opacity: 0.5;
   padding: 1rem 1.5rem;
 `);

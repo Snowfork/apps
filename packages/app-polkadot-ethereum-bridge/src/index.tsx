@@ -6,7 +6,7 @@ import React from 'react';
 import Web3 from 'web3';
 
 // local imports and components
-import Bank from './Bank';
+import Bridge from './Bridge';
 
 type MyWindow = (typeof window) & {
   ethereum: any;
@@ -32,9 +32,9 @@ function TemplateApp ({ className }: Props): React.ReactElement<Props> {
 
   return (
       <main className={className}>
-        <Bank web3={(window as MyWindow).web3}/>        
+        <Bridge web3={(window as MyWindow).web3}/>
       </main>
   );
 }
 
-export default React.memo(TemplateApp);
+export default TemplateApp;
