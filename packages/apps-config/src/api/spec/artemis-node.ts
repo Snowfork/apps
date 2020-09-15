@@ -23,5 +23,6 @@ export default {
     block_number: 'u64',
     event_index: 'u32'
   },
+  BridgedAssetId: 'H160',
   TokenId: 'H160'
 };
