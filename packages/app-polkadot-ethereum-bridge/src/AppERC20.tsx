@@ -9,7 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Local
 import * as ERC20 from "./contracts/ERC20.json";
-import {REFRESH_INTERVAL_MILLISECONDS } from "./config";
+import { REFRESH_INTERVAL_MILLISECONDS } from "./config";
 
 // ------------------------------------------
 //                  Props
@@ -59,11 +59,8 @@ function LoadERC20Token({ web3, onContractInstance }: LoadERC20TokenProps): Reac
   useEffect(() => {
     const fetchTokenContract = async () => {
       const tokenContractInstance = new web3.eth.Contract(ERC20.abi, tokenAddress);
-      console.log(tokenContractInstance)
       onContractInstance(tokenContractInstance);
     };
-
-    console.log("token address:", tokenAddress);
 
     // All valid contract addresses have 42 characters ('0x' + address)
     if(tokenAddress.length == 42) {

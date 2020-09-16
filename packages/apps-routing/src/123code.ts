@@ -10,14 +10,13 @@ export default function create (t: <T = string> (key: string, text: string, opti
   return {
     Component,
     display: {
-      isHidden: true,
       needsAccounts: true,
       needsApi: [
         'tx.balances.transfer'
       ]
     },
-    icon: 'th',
+    icon: 'arrow-right',
     name: 'app-polkadot-ethereum-bridge',
-    text: t<string>('app-polkadot-ethereum-bridge', 'Template', { ns: 'apps-routing' })
+    text: t<string>('app-polkadot-ethereum-bridge', 'Bridge', { ns: 'apps-routing' })
   };
 }
