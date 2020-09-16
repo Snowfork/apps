@@ -5,15 +5,14 @@ import Web3 from 'web3';
 import { Box } from "@material-ui/core";
 
 // Local imports
-import {TEST_TOKEN_CONTRACT_ADDRESS, APP_ETHEREUM_CONTRACT_ADDRESS, APP_ERC20_CONTRACT_ADDRESS } from "./config";
-import AppEthereum from "./AppEthereum";
+import {APP_ETH_CONTRACT_ADDRESS, APP_ERC20_CONTRACT_ADDRESS } from "./config";
+import AppEthereum from "./AppETH";
 import AppERC20 from "./AppERC20";
 
 /* tslint:disable */
 // import * as BankContract from "./contracts/Bank.json";
-import * as EthereumApp from "./contracts/EthereumApp.json";
+import * as ETHApp from "./contracts/ETHApp.json";
 import * as ERC20App from "./contracts/ERC20App.json";
-import * as TestToken from "./contracts/TestToken.json";
 /* tslint:enable */
 
 
@@ -31,9 +30,8 @@ function Bridge({ web3 }: Props): React.ReactElement<Props> {
 
   // State
   const initialContract: any = null
-  const [appEthereumContract, setAppEthereumContract] = useState(initialContract);
+  const [appETHContract, setAppETHContract] = useState(initialContract);
   const [appERC20Contract, setAppERC20Contract] = useState(initialContract);
-  const [tokenContract, setTokenContract] = useState(initialContract);
   const [defaultAccount, setDefaultAccount] = useState(String);
 
   // Effects
@@ -51,8 +49,8 @@ function Bridge({ web3 }: Props): React.ReactElement<Props> {
   // Fetch contracts
   useEffect(() => {
     const fetchAppEthereumContract = async () => {
-      const appEthereumContractInstance = new web3.eth.Contract(EthereumApp.abi, APP_ETHEREUM_CONTRACT_ADDRESS);
-      setAppEthereumContract(appEthereumContractInstance);
+      const appETHContractInstance = new web3.eth.Contract(ETHApp.abi, APP_ETH_CONTRACT_ADDRESS);
+      setAppETHContract(appETHContractInstance);
     };
 
     const fetchAppERC20Contract = async () => {
@@ -60,21 +58,15 @@ function Bridge({ web3 }: Props): React.ReactElement<Props> {
       setAppERC20Contract(appERC20ContractInstance);
     };
 
-    const fetchTokenContract = async () => {
-      const tokenContractInstance = new web3.eth.Contract(TestToken.abi, TEST_TOKEN_CONTRACT_ADDRESS);
-      setTokenContract(tokenContractInstance);
-    };
-
     fetchAppEthereumContract();
     fetchAppERC20Contract();
-    fetchTokenContract();
   }, [web3]);
 
   // Render
   return (
     <Box>
-      <AppEthereum web3={web3} contract={appEthereumContract} defaultAccount={defaultAccount}/>
-      <AppERC20 web3={web3} contract={appERC20Contract} tokenContract={tokenContract} defaultAccount={defaultAccount}/>
+      <AppEthereum web3={web3} contract={appETHContract} defaultAccount={defaultAccount}/>
+      <AppERC20 web3={web3} contract={appERC20Contract} defaultAccount={defaultAccount}/>
     </Box>
   );
 }

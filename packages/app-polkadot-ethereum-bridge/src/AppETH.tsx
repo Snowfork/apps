@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 // ------------------------------------------
-//               AppEthereum component
+//               AppETH component
 // ------------------------------------------
-function AppEthereum({ web3, contract, defaultAccount }: Props): React.ReactElement<Props> {
+function AppETH({ web3, contract, defaultAccount }: Props): React.ReactElement<Props> {
   const classes = useStyles();
 
   // State
@@ -49,7 +49,6 @@ function AppEthereum({ web3, contract, defaultAccount }: Props): React.ReactElem
     const execute = async (rawRecipient: string, amount: string) => {
       const recipientBytes = Buffer.from(rawRecipient, "hex");
 
-      // Send Ethereum to bank contract
       await contract.methods.sendETH(recipientBytes).send({
         from: defaultAccount,
         gas: 500000,
@@ -89,8 +88,8 @@ function AppEthereum({ web3, contract, defaultAccount }: Props): React.ReactElem
   return (
     <Box>
       <Box display="flex" flexDirection="column" className={classes.paper}>
-        <Typography variant="h5" gutterBottom>
-            Ethereum App
+        <Typography variant="h5" align="center" gutterBottom>
+            ETH App
         </Typography>
       <Box padding={1}/>
         <Typography gutterBottom>
@@ -145,7 +144,7 @@ function AppEthereum({ web3, contract, defaultAccount }: Props): React.ReactElem
   );
 }
 
-export default React.memo(styled(AppEthereum)`
+export default React.memo(styled(AppETH)`
   opacity: 0.5;
   padding: 1rem 1.5rem;
 `);
