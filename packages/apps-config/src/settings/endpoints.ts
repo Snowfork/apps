@@ -193,9 +193,9 @@ function createTestNetworks (t: TFunction): LinkOption[] {
       value: 'wss://rococo-rpc.snowfork.network'
     },
     {
-      info: 'snowforkRococoParachain',
+      info: 'snowforkRococoEthereum',
       isChild: true,
-      text: t<string>('rpc.rococo-snowfork.parachain', 'P⇄E (Testpara, hosted by Snowfork)', { ns: 'apps-config' }),
+      text: t<string>('rpc.rococo-snowfork.parachain', 'Ethereum Bridge PC1 (Testpara, hosted by Snowfork)', { ns: 'apps-config' }),
       value: 'wss://parachain-rpc.snowfork.network'
     },
     // alphabetical based on chain name
