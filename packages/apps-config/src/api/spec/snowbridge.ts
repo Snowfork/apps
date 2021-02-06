@@ -14,6 +14,7 @@ export default {
       "Incentivized": null
     }
   },
+  "MessageId": "(ChannelId, u64)",
   "Message": {
     "data": "Vec<u8>",
     "proof": "Proof"
@@ -46,10 +47,20 @@ export default {
   "Bloom": {
     "_": "[u8; 256]"
   },
+  "PruningRange": {
+    "oldestUnprunedBlock": "u64",
+    "oldestBlockToKeep": "u64"
+  },
   "AssetId": {
     "_enum": {
       "ETH": null,
       "Token": "H160"
     }
+  },
+  "InboundChannelData": {
+    "nonce": "u64"
+  },
+  "OutboundChannelData": {
+    "nonce": "u64"
   }
 };
